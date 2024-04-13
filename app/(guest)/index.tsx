@@ -1,7 +1,8 @@
+import Button from '@components/ui/button';
 import theme from '@utils/theme';
 import { router } from 'expo-router';
 import { useTranslation } from 'react-i18next';
-import { Button, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
 const GuestHomeScreen = () => {
   const { t, i18n } = useTranslation('common');
@@ -11,7 +12,7 @@ const GuestHomeScreen = () => {
   };
 
   return (
-    <View className="flex flex-1 items-center justify-center bg-red-300">
+    <View className="flex flex-1 items-center justify-center gap-y-4 bg-gray-100">
       <Text
         style={{
           color: theme.primary[400],
@@ -20,15 +21,24 @@ const GuestHomeScreen = () => {
       </Text>
       <Text>{t('helloWorld')}</Text>
       <Button
-        title="Login"
-        onPress={() => router.navigate('(authenticated)')}
-      />
+        variant="default"
+        onPress={() => router.navigate('(authenticated)')}>
+        Login
+      </Button>
+
+      <Button variant="filled" onPress={() => handleLanguageChange('en')}>
+        Change Language 🇬🇧
+      </Button>
+
+      <Button variant="filled" onPress={() => handleLanguageChange('sl')}>
+        Change Language 🇸🇮
+      </Button>
+
       <Button
-        title="Change Language"
-        onPress={() =>
-          handleLanguageChange(i18n.language === 'en' ? 'sl' : 'en')
-        }
-      />
+        variant="danger"
+        onPress={() => alert('You just performed a dangerous action!')}>
+        Dangerous Button
+      </Button>
     </View>
   );
 };

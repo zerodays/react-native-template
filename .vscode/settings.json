@@ -1,0 +1,7 @@
+{
+  "tailwindCSS.experimental.classRegex": [
+    ["variants \\=([^;]*);", "'([^']*)'"],
+    ["variants \\=([^;]*);", "\"([^\"]*)\""],
+    ["variants \\=([^;]*);", "\\`([^\\`]*)\\`"]
+  ]
+}
