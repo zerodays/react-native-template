@@ -4,38 +4,39 @@ Welcome to `react-native-template` 👋, the go-to template for building mobile 
 
 ## Table of Contents
 
-1. [Quick Start](#quick-start-)
-2. [Project Structure](#project-structure-)
-3. [Configuration Files](#configuration-files-)
-4. [Features and Benefits](#features-and-benefits-)
-   - [Full Linting and Auto Formatting](#1-full-linting-and-auto-formatting-)
-   - [Easy Aliases with TypeScript](#2-easy-aliases-with-typescript-)
-   - [Nativewind Integration](#3-nativewind-integration-)
-   - [Full Localization Support](#4-full-localization-support-)
-   - [Typed Expo Router Setup](#5-typed-expo-router-setup-)
-   - [Zodius API Client Setup](#6-zodius-api-client-setup-)
-   - [Custom Utility Hooks](#7-custom-utility-hooks-)
-   - [Zustand State Management](#8-zustand-state-management-)
-   - [CI/CD Workflow Configuration](#9-cicd-workflow-configuration-)
-   - [Infisical Environment Variable Support](#10-infisical-environment-variable-support-)
-5. [Included Packages and Their Benefits](#included-packages-and-their-benefits-)
+1. [Quick Start](#quick-start)
+2. [Project Structure](#project-structure)
+3. [Configuration Files](#configuration-files)
+4. [Features and Benefits](#features-and-benefits)
+   - [Full Linting and Auto Formatting](#1-full-linting-and-auto-formatting)
+   - [Easy Aliases with TypeScript](#2-easy-aliases-with-typescript)
+   - [Nativewind Integration](#3-nativewind-integration)
+   - [Full Localization Support](#4-full-localization-support)
+   - [Typed Expo Router Setup](#5-typed-expo-router-setup)
+   - [Zodius API Client Setup](#6-zodius-api-client-setup)
+   - [Custom Utility Hooks](#7-custom-utility-hooks)
+   - [Zustand State Management](#8-zustand-state-management)
+   - [CI/CD Workflow Configuration](#9-cicd-workflow-configuration)
+   - [Infisical Environment Variable Support](#10-infisical-environment-variable-support)
+5. [Included Packages and Their Benefits](#included-packages-and-their-benefits)
    - [Zod](#zod)
    - [Lottie-React-Native](#lottie-react-native)
    - [Lucide-React-Native](#lucide-react-native)
    - [React Hook Form](#react-hook-form)
-6. [Customizable Components](#customizable-components-)
-   - [Button](#button-)
-   - [Dialog](#dialog-)
-   - [Loading](#loading-)
-   - [FormTextInput](#formtextinput-)
-   - [ValidationError](#validationerror-)
-   - [Toaster](#toaster-)
-7. [Using the Template Effectively](#using-the-template-effectively-)
-   - [Recommended Folder Structure](#recommended-folder-structure-)
-   - [Development Decision Flow Chart](#development-decision-flow-chart-)
-   - [Benefits of This Approach](#benefits-of-this-approach-)
-8. [Finish Line](#finish-line-)
+6. [Customizable Components](#customizable-components)
+   - [Button](#button)
+   - [Dialog](#dialog)
+   - [Loading](#loading)
+   - [FormTextInput](#formtextinput)
+   - [ValidationError](#validationerror)
+   - [Toaster](#toaster)
+7. [Using the Template Effectively](#using-the-template-effectively)
+   - [Recommended Folder Structure](#recommended-folder-structure)
+   - [Development Decision Flow Chart](#development-decision-flow-chart)
+   - [Benefits of This Approach](#benefits-of-this-approach)
+8. [Finish Line](#finish-line)
 
+<a name="quick-start"></a>
 ## Quick Start 🚀
 
 To create a new project using this template, run:
@@ -46,6 +47,7 @@ cd my-app
 yarn
 ```
 
+<a name="project-structure"></a>
 ## Project Structure 🏗️
 
 This template provides a well-organized directory structure with a set of pre-configured files to streamline your development process. Here's an overview of the essential components:
@@ -57,6 +59,7 @@ This template provides a well-organized directory structure with a set of pre-co
 - `locales`: Contains localization files for internationalization.
 - `utils`: A place for utility functions, hooks, stores and types that can be shared across your application.
 
+<a name="configuration-files"></a>
 ## Configuration Files 📑
 
 Each configuration file is set up to ensure that your development experience is as smooth as possible:
@@ -76,6 +79,7 @@ Each configuration file is set up to ensure that your development experience is 
 - `tsconfig.json`: The TypeScript compiler configuration file that specifies the root files and the compiler options required to compile the project.
 - `yarn.lock`: Auto-generated file that ensures consistent installation of node modules across environments.
 
+<a name="configuration-files"></a>
 ## Features and Benefits 🌟
 
 This template comes equipped with a robust set of features and solutions to enhance your development workflow:
