@@ -89,6 +89,7 @@ Each configuration file is set up to ensure that your development experience is 
 This template comes equipped with a robust set of features and solutions to enhance your development workflow:
 
 <a name="1-full-linting-and-auto-formatting"></a>
+
 ### 1. Full Linting and Auto Formatting 🛠️
 
 Leverage full linting and auto-formatting with ESLint and Prettier, configured to help maintain a clean and consistent codebase. Auto-sorting of imports and Tailwind classes on save, alongside the enforcement of good practices, keeps your project tidy.
@@ -267,21 +268,25 @@ The `react-native-template` includes several packages that extend its capabiliti
 <a name="zod"></a>
 
 #### Zod
+
 [Zod](https://github.com/colinhacks/zod) is a TypeScript-first schema declaration and validation library. It allows you to build schemas using TypeScript syntax, ensuring that data conforms to the specified shapes and types at runtime. Zod is particularly useful for validating data received from external sources, such as APIs or user input, and helps enforce type safety throughout the application.
 
 <a name="lottie-react-native"></a>
 
 #### Lottie-React-Native
+
 [Lottie-React-Native](https://github.com/lottie-react-native/lottie-react-native) is a mobile library for React Native that parses Adobe After Effects animations exported as json with Bodymovin and renders them natively on mobile. This package enables developers to add high-quality animations to their React Native applications easily. Lottie animations are highly performant and can drastically enhance the user interface by providing fluid, eye-catching animations that can be controlled programmatically.
 
 <a name="lucide-react-native"></a>
 
 #### Lucide-React-Native
+
 [Lucide-React-Native](https://github.com/lucide-icons/lucide-react-native) is a fork of the Feather Icons project, specifically tailored for React Native applications. It provides a collection of beautifully crafted, customizable icons which are easy to use in UI development. Using Lucide icons helps maintain consistency and clarity in the app’s design, making the interface more intuitive and visually appealing.
 
 <a name="react-hook-form"></a>
 
 #### React Hook Form
+
 [React Hook Form](https://react-hook-form.com/) is a flexible and efficient library for managing forms in React applications. It embraces uncontrolled components and native HTML inputs, utilizing hooks to optimize re-renders and improve performance. React Hook Form reduces the amount of boilerplate code needed to build complex forms while increasing performance compared to traditional form state management practices.
 
 <a name="customizable-components"></a>
