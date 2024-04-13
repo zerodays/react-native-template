@@ -18,18 +18,23 @@ Welcome to `react-native-template` 👋, the go-to template for building mobile 
    - [Zustand State Management](#8-zustand-state-management-)
    - [CI/CD Workflow Configuration](#9-cicd-workflow-configuration-)
    - [Infisical Environment Variable Support](#10-infisical-environment-variable-support-)
-5. [Customizable Components](#customizable-components-)
+5. [Included Packages and Their Benefits](#included-packages-and-their-benefits-)
+   - [Zod](#zod-)
+   - [Lottie-React-Native](#lottie-react-native-)
+   - [Lucide-React-Native](#lucide-react-native-)
+   - [React Hook Form](#react-hook-form-)
+6. [Customizable Components](#customizable-components-)
    - [Button](#button-)
    - [Dialog](#dialog-)
    - [Loading](#loading-)
    - [FormTextInput](#formtextinput-)
    - [ValidationError](#validationerror-)
    - [Toaster](#toaster-)
-6. [Using the Template Effectively](#using-the-template-effectively-)
+7. [Using the Template Effectively](#using-the-template-effectively-)
    - [Recommended Folder Structure](#recommended-folder-structure-)
    - [Development Decision Flow Chart](#development-decision-flow-chart-)
    - [Benefits of This Approach](#benefits-of-this-approach-)
-7. [Finish Line](#finish-line-)
+8. [Finish Line](#finish-line-)
 
 ## Quick Start 🚀
 
@@ -226,6 +231,22 @@ Automate your development processes with pre-defined GitHub Actions workflows lo
 
 Incorporate environment variables securely using the Infisical service with a custom script `infisical.sh`, which is run to inject variables into your build process.
 
+### Included Packages and Their Benefits
+
+The `react-native-template` includes several packages that extend its capabilities and enrich the development experience. Here’s a brief overview of these packages and what they offer:
+
+#### Zod
+[Zod](https://github.com/colinhacks/zod) is a TypeScript-first schema declaration and validation library. It allows you to build schemas using TypeScript syntax, ensuring that data conforms to the specified shapes and types at runtime. Zod is particularly useful for validating data received from external sources, such as APIs or user input, and helps enforce type safety throughout the application.
+
+#### Lottie-React-Native
+[Lottie-React-Native](https://github.com/lottie-react-native/lottie-react-native) is a mobile library for React Native that parses Adobe After Effects animations exported as json with Bodymovin and renders them natively on mobile. This package enables developers to add high-quality animations to their React Native applications easily. Lottie animations are highly performant and can drastically enhance the user interface by providing fluid, eye-catching animations that can be controlled programmatically.
+
+#### Lucide-React-Native
+[Lucide-React-Native](https://github.com/lucide-icons/lucide-react-native) is a fork of the Feather Icons project, specifically tailored for React Native applications. It provides a collection of beautifully crafted, customizable icons which are easy to use in UI development. Using Lucide icons helps maintain consistency and clarity in the app’s design, making the interface more intuitive and visually appealing.
+
+#### React Hook Form
+[React Hook Form](https://react-hook-form.com/) is a flexible and efficient library for managing forms in React applications. It embraces uncontrolled components and native HTML inputs, utilizing hooks to optimize re-renders and improve performance. React Hook Form reduces the amount of boilerplate code needed to build complex forms while increasing performance compared to traditional form state management practices.
+
 ## Customizable Components 🎨
 
 This template includes a set of customizable components that you can use to build your application:
@@ -240,7 +261,7 @@ The `Button` component leverages the power of Tailwind CSS with React Native thr
 
 Here's a quick rundown on how it works:
 
-- **Variants**: Define the look of your buttons through a `variants` object. Each variant contains styles for the container, text, and optional icon. Variants are applied using the `cn` function from Nativewind which ensures proper sorting of Tailwind classes.
+- **Variants**: Define the look of your buttons through a `variants` object. Each variant contains styles for the container, text, and optional icon. Variants are applied using the `cn` function from `utils/cn.ts` which ensures proper sorting of Tailwind classes.
 
 - **Animation**: The component uses `react-native-reanimated` to provide feedback when the button is pressed, with a gentle fade-in and move-up effect.
 
