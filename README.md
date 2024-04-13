@@ -37,6 +37,7 @@ Welcome to `react-native-template` 👋, the go-to template for building mobile 
 8. [Finish Line](#finish-line)
 
 <a name="quick-start"></a>
+
 ## Quick Start 🚀
 
 To create a new project using this template, run:
@@ -48,6 +49,7 @@ yarn
 ```
 
 <a name="project-structure"></a>
+
 ## Project Structure 🏗️
 
 This template provides a well-organized directory structure with a set of pre-configured files to streamline your development process. Here's an overview of the essential components:
@@ -60,6 +62,7 @@ This template provides a well-organized directory structure with a set of pre-co
 - `utils`: A place for utility functions, hooks, stores and types that can be shared across your application.
 
 <a name="configuration-files"></a>
+
 ## Configuration Files 📑
 
 Each configuration file is set up to ensure that your development experience is as smooth as possible:
@@ -80,10 +83,12 @@ Each configuration file is set up to ensure that your development experience is 
 - `yarn.lock`: Auto-generated file that ensures consistent installation of node modules across environments.
 
 <a name="configuration-files"></a>
+
 ## Features and Benefits 🌟
 
 This template comes equipped with a robust set of features and solutions to enhance your development workflow:
 
+<a name="1-full-linting-and-auto-formatting"></a>
 ### 1. Full Linting and Auto Formatting 🛠️
 
 Leverage full linting and auto-formatting with ESLint and Prettier, configured to help maintain a clean and consistent codebase. Auto-sorting of imports and Tailwind classes on save, alongside the enforcement of good practices, keeps your project tidy.
@@ -97,6 +102,8 @@ For linting and formatting your code, use these commands in `package.json`:
   "format-fix": "prettier --write . --ignore-path .gitignore"
 }
 ```
+
+<a name="2-easy-aliases-with-typescript"></a>
 
 ### 2. Easy Aliases with TypeScript 🏷️
 
@@ -115,6 +122,8 @@ Clean up your imports with straightforward path aliases in `tsconfig.json`, prom
 }
 ```
 
+<a name="3-nativewind-integration"></a>
+
 ### 3. Nativewind Integration 🎨
 
 Hit the ground running with Nativewind's setup. Utilize the `theme` object for consistent styling and the `cn` function to conditionally apply classes.
@@ -132,6 +141,8 @@ import { cn } from '@utils/cn';
 </Text>
 ```
 
+<a name="4-full-localization-support"></a>
+
 ### 4. Full Localization Support 🌐
 
 Achieve effortless internationalization with `react-i18next` and `i18next`. Translation keys are typesafe and localisation files are neatly organized.
@@ -143,6 +154,8 @@ const { t, i18n } = useTranslation('common');
 i18n.changeLanguage('en'); // Switch languages
 <Text>{t('helloWorld')}</Text>; // Typesafe keys
 ```
+
+<a name="5-typed-expo-router-setup"></a>
 
 ### 5. Typed Expo Router Setup 🚦
 
@@ -171,6 +184,8 @@ export default Routes;
 // router.push(Routes.artists.artist('1').songs.song('2'));
 ```
 
+<a name="6-zodius-api-client-setup"></a>
+
 ### 6. Zodius API Client Setup 📡
 
 A pre-configured Zodius API client with Tenstack Query for managing API calls. The `./api` folder includes a fully set up example for GET and POST requests, complete with schemas, definitions, and global error handling through a custom Zodius plugin.
@@ -195,6 +210,8 @@ const api = new ZodiosHooks('exampleApi', apiClient);
 export { api, apiClient };
 ```
 
+<a name="7-custom-utility-hooks"></a>
+
 ### 7. Custom Utility Hooks 🔗
 
 Two custom hooks are provided for enhanced functionality:
@@ -215,6 +232,8 @@ const [fontsLoaded, fontError] = useCustomFonts({
 const isOnline = useIsOnline();
 ```
 
+<a name="8-zustand-state-management"></a>
+
 ### 8. Zustand State Management 🏪
 
 Effortlessly manage your application state with Zustand, which includes async persistent storage support.
@@ -222,6 +241,8 @@ Effortlessly manage your application state with Zustand, which includes async pe
 ```typescript
 const { value, increment, decrement } = useExampleStore();
 ```
+
+<a name="9-cicd-workflow-configuration"></a>
 
 ### 9. CI/CD Workflow Configuration 🔄
 
@@ -231,19 +252,29 @@ Automate your development processes with pre-defined GitHub Actions workflows lo
 - `lint.yml`: For code linting checks.
 - A pull request template to standardize contributions.
 
+<a name="10-infisical-environment-variable-support"></a>
+
 ### 10. Infisical Environment Variable Support 🔐
 
 Incorporate environment variables securely using the Infisical service with a custom script `infisical.sh`, which is run to inject variables into your build process.
+
+<a name="included-packages-and-their-benefits"></a>
 
 ### Included Packages and Their Benefits 📦
 
 The `react-native-template` includes several packages that extend its capabilities and enrich the development experience. Here’s a brief overview of these packages and what they offer:
 
+<a name="zod"></a>
+
 #### Zod
 [Zod](https://github.com/colinhacks/zod) is a TypeScript-first schema declaration and validation library. It allows you to build schemas using TypeScript syntax, ensuring that data conforms to the specified shapes and types at runtime. Zod is particularly useful for validating data received from external sources, such as APIs or user input, and helps enforce type safety throughout the application.
 
+<a name="lottie-react-native"></a>
+
 #### Lottie-React-Native
 [Lottie-React-Native](https://github.com/lottie-react-native/lottie-react-native) is a mobile library for React Native that parses Adobe After Effects animations exported as json with Bodymovin and renders them natively on mobile. This package enables developers to add high-quality animations to their React Native applications easily. Lottie animations are highly performant and can drastically enhance the user interface by providing fluid, eye-catching animations that can be controlled programmatically.
+
+<a name="lucide-react-native"></a>
 
 #### Lucide-React-Native
 [Lucide-React-Native](https://github.com/lucide-icons/lucide-react-native) is a fork of the Feather Icons project, specifically tailored for React Native applications. It provides a collection of beautifully crafted, customizable icons which are easy to use in UI development. Using Lucide icons helps maintain consistency and clarity in the app’s design, making the interface more intuitive and visually appealing.
