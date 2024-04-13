@@ -1,4 +1,6 @@
+import { cn } from '@utils/cn';
 import { useExampleStore } from '@utils/stores/example-store';
+import theme from '@utils/theme';
 import { router } from 'expo-router';
 import { Button, Text, View } from 'react-native';
 
@@ -12,7 +14,13 @@ const AuthHomeScreen = () => {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <Text>Authenticated Home</Text>
+      <Text
+        className={cn('text-blue-600', value > 0 && 'bg-red-600')}
+        style={{
+          backgroundColor: value > 5 ? 'red' : theme.primary[500],
+        }}>
+        Authenticated Home
+      </Text>
       <Text>{value}</Text>
       <Button title="Increment" onPress={() => increment()} />
       <Button title="Decrement" onPress={() => decrement()} />

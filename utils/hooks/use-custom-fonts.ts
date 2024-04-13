@@ -13,7 +13,7 @@ const fontsToLoad = {
   extralight: require('@assets/fonts/Inter-ExtraLight.ttf'),
 } as Record<string, FontSource>;
 
-export default function useSfFonts({
+export default function useCustomFonts({
   callback,
 }: {
   callback?: () => void;
