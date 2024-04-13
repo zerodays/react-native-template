@@ -1,0 +1,50 @@
+name: Lint & Check App
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint_app:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Run lint
+        run: yarn lint
+  
+  typecheck_app:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Run typecheck
+        run: yarn typecheck
+
+  run_prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Run Prettier through format
+        run: yarn format

@@ -8,6 +8,7 @@ import { FontSource, useFonts } from 'expo-font';
 import { Slot, SplashScreen } from 'expo-router';
 import { useEffect } from 'react';
 import '../global.css';
+import '../i18n/config';
 
 // Keep splash screen visible while we fetch fonts and other assets
 SplashScreen.preventAutoHideAsync();
