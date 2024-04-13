@@ -4,37 +4,37 @@ Welcome to `react-native-template` 👋, the go-to template for building mobile 
 
 ## Table of Contents
 
-1. [Quick Start](#quick-start)
-2. [Project Structure](#project-structure)
-3. [Configuration Files](#configuration-files)
-4. [Features and Benefits](#features-and-benefits)
-   - [Full Linting and Auto Formatting](#1-full-linting-and-auto-formatting)
-   - [Easy Aliases with TypeScript](#2-easy-aliases-with-typescript)
-   - [Nativewind Integration](#3-nativewind-integration)
-   - [Full Localization Support](#4-full-localization-support)
-   - [Typed Expo Router Setup](#5-typed-expo-router-setup)
-   - [Zodius API Client Setup](#6-zodius-api-client-setup)
-   - [Custom Utility Hooks](#7-custom-utility-hooks)
-   - [Zustand State Management](#8-zustand-state-management)
-   - [CI/CD Workflow Configuration](#9-cicd-workflow-configuration)
-   - [Infisical Environment Variable Support](#10-infisical-environment-variable-support)
-5. [Included Packages and Their Benefits](#included-packages-and-their-benefits)
+1. [Quick Start](#quick-start-)
+2. [Project Structure](#project-structure-)
+3. [Configuration Files](#configuration-files-)
+4. [Features and Benefits](#features-and-benefits-)
+   - [Full Linting and Auto Formatting](#1-full-linting-and-auto-formatting-)
+   - [Easy Aliases with TypeScript](#2-easy-aliases-with-typescript-)
+   - [Nativewind Integration](#3-nativewind-integration-)
+   - [Full Localization Support](#4-full-localization-support-)
+   - [Typed Expo Router Setup](#5-typed-expo-router-setup-)
+   - [Zodius API Client Setup](#6-zodius-api-client-setup-)
+   - [Custom Utility Hooks](#7-custom-utility-hooks-)
+   - [Zustand State Management](#8-zustand-state-management-)
+   - [CI/CD Workflow Configuration](#9-cicd-workflow-configuration-)
+   - [Infisical Environment Variable Support](#10-infisical-environment-variable-support-)
+5. [Included Packages and Their Benefits](#included-packages-and-their-benefits-)
    - [Zod](#zod)
    - [Lottie-React-Native](#lottie-react-native)
    - [Lucide-React-Native](#lucide-react-native)
    - [React Hook Form](#react-hook-form)
-6. [Customizable Components](#customizable-components)
-   - [Button](#button)
-   - [Dialog](#dialog)
-   - [Loading](#loading)
-   - [FormTextInput](#formtextinput)
-   - [ValidationError](#validationerror)
-   - [Toaster](#toaster)
-7. [Using the Template Effectively](#using-the-template-effectively)
-   - [Recommended Folder Structure](#recommended-folder-structure)
-   - [Development Decision Flow Chart](#development-decision-flow-chart)
-   - [Benefits of This Approach](#benefits-of-this-approach)
-8. [Finish Line](#finish-line)
+6. [Customizable Components](#customizable-components-)
+   - [Button](#button-)
+   - [Dialog](#dialog-)
+   - [Loading](#loading-)
+   - [FormTextInput](#formtextinput-)
+   - [ValidationError](#validationerror-)
+   - [Toaster](#toaster-)
+7. [Using the Template Effectively](#using-the-template-effectively-)
+   - [Recommended Folder Structure](#recommended-folder-structure-)
+   - [Development Decision Flow Chart](#development-decision-flow-chart-)
+   - [Benefits of This Approach](#benefits-of-this-approach-)
+8. [Finish Line](#finish-line-)
 
 ## Quick Start 🚀
 
@@ -231,7 +231,7 @@ Automate your development processes with pre-defined GitHub Actions workflows lo
 
 Incorporate environment variables securely using the Infisical service with a custom script `infisical.sh`, which is run to inject variables into your build process.
 
-### Included Packages and Their Benefits
+### Included Packages and Their Benefits 📦
 
 The `react-native-template` includes several packages that extend its capabilities and enrich the development experience. Here’s a brief overview of these packages and what they offer:
 
@@ -247,7 +247,7 @@ The `react-native-template` includes several packages that extend its capabiliti
 #### React Hook Form
 [React Hook Form](https://react-hook-form.com/) is a flexible and efficient library for managing forms in React applications. It embraces uncontrolled components and native HTML inputs, utilizing hooks to optimize re-renders and improve performance. React Hook Form reduces the amount of boilerplate code needed to build complex forms while increasing performance compared to traditional form state management practices.
 
-## Customizable Components 🎨
+## Customizable Components 🎄
 
 This template includes a set of customizable components that you can use to build your application:
 
@@ -640,6 +640,6 @@ When developing with this template, use the following decision process:
 
 By following this development flow, you can maintain a clean and organized codebase that is easy to navigate and scale as your application grows.
 
-## Finish Line 🎉
+## Finish Line 🏁
 
 Now go build something amazing with `react-native-template`! We hope this template provides you with the tools and structure you need to create high-quality mobile applications efficiently. If you have any questions, feedback, or suggestions, feel free to reach out to us. Happy coding! 🚀
