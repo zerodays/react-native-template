@@ -383,3 +383,185 @@ return isLoading ? (
 ```
 
 With the `Loading` component, you provide a seamless and informative loading experience to your application's users.
+
+## FormTextInput 📝
+
+The `FormTextInput` component in the template is a versatile input field designed to work seamlessly with `react-hook-form`. It incorporates features like form context integration, custom icons, and support for different input types including text, number, and multiline text.
+
+### Component Features
+
+- **Integration with `react-hook-form`**: The component is built to automatically hook into the `FormProvider` context, making form state management effortless.
+- **Custom Icons**: It supports the inclusion of icons within the text input for a polished look.
+- **Multiline Support**: Easily switch between single-line and multiline inputs based on the provided `params`.
+- **Display Mode**: A display mode that disables editing, suitable for presenting values in a read-only format.
+
+### How It Works
+
+The `FormTextInput` uses a `Controller` from `react-hook-form` to manage the text input's state and validations. It receives a `name` prop which corresponds to the form field it controls.
+
+### Usage
+
+To use this component, wrap your form in a `FormProvider` and then include `FormTextInput` for each field you need:
+
+```jsx
+import { FormProvider } from 'react-hook-form';
+import FormTextInput from '@components/FormTextInput';
+
+const formMethods = useForm(); // Initialize react-hook-form methods
+
+// ...
+
+<FormProvider {...formMethods}>
+  <FormTextInput
+    name="username"
+    label="Username"
+    icon={UserIcon} // Replace with an actual icon component
+    params={{ answerType: 'text' }}
+  />
+</FormProvider>
+```
+
+### Customizing the TextInput
+
+To customize the text input, pass additional props like `style` for styling and `params` for defining the input's behavior:
+
+```jsx
+<FormTextInput
+  name="description"
+  label="Description"
+  params={{ answerType: 'multiline-text' }}
+  style={{ ... }}
+/>
+```
+
+### Custom Icons
+
+Pass your desired icon component through the `icon` prop:
+
+```jsx
+import { MailIcon } from 'lucide-react-native';
+
+<FormTextInput
+  name="email"
+  label="Email Address"
+  icon={MailIcon}
+/>
+```
+
+By using `FormTextInput`, form inputs are handled elegantly, providing a streamlined user experience for form interactions.
+
+## ValidationError 🔍
+
+The `ValidationError` component in the template is a dedicated UI element for displaying form validation errors. It integrates with `react-hook-form` and uses internationalization for error messages.
+
+### Component Features
+
+- **Seamless Integration**: Works in conjunction with `react-hook-form` to display validation messages.
+- **Internationalization Support**: Utilizes `react-i18next` for translating error messages, making the component ready for multilingual applications.
+- **Flexibility**: Offers a `tiny` prop to display a smaller-sized error message, suitable for inline errors or limited space scenarios.
+
+### How It Works
+
+The `ValidationError` component taps into the `FormProvider` context to access the form's error state. It checks if there are any errors associated with the given `name` prop and renders the error message if present.
+
+### Usage
+
+Wrap your form controls within a `FormProvider` and position the `ValidationError` component where you want to display the error message:
+
+```jsx
+import { FormProvider } from 'react-hook-form';
+import FormTextInput from '@components/FormTextInput';
+import ValidationError from '@components/ValidationError';
+
+const formMethods = useForm(); // Initialize react-hook-form methods
+
+// ...
+
+<FormProvider {...formMethods}>
+  <FormTextInput
+    name="username"
+    label="Username"
+    // other props
+  />
+  <ValidationError name="username" />
+</FormProvider>
+```
+
+### Customizing the Display
+
+To show a smaller error message, use the `tiny` prop:
+
+```jsx
+<ValidationError name="username" tiny />
+```
+
+### Wrapping Components with Error Handling
+
+For convenience, you can wrap any form control with `WithValidationError` to include both the input and its validation message:
+
+```jsx
+import { WithValidationError } from '@components/ValidationError';
+
+// ...
+
+<WithValidationError name="password">
+  <FormTextInput
+    name="password"
+    label="Password"
+    secureTextEntry
+    // other props
+  />
+</WithValidationError>
+```
+
+The `ValidationError` and `WithValidationError` components help maintain a clean UI by only showing error messages when necessary, enhancing the user experience with clear feedback.
+
+## Toaster 🍞
+
+The `Toaster` component is a dynamic and interactive toast notification system designed to provide immediate feedback to users. It's connected to a store for global state management and comes with an API plugin for automatic display on API events.
+
+### Component Features
+
+- **Gesture Support**: Users can dismiss the toast by dragging it down, thanks to the integrated gesture handler.
+- **Animated Visibility**: Uses `react-native-reanimated` for smooth show and hide animations.
+- **Safe Area Handling**: Accounts for device safe areas, ensuring the toast is always visible and accessible.
+- **Custom Icons**: Displays icons for error, success, or information based on the toast type.
+
+### How It Works
+
+The `Toaster` component listens to the toast state from `useToastStore`. When a toast is set, it animates into view. It can be dismissed with a drag gesture or by pressing the 'Dismiss' button.
+
+### Usage
+
+The `Toaster` component does not need to be manually managed; it works by setting the toast state through the `useToastStore` actions:
+
+```javascript
+useToastStore.getState().setToast({
+  type: 'success',
+  message: 'Your changes have been saved!',
+});
+```
+
+### Customizing the Toaster
+
+While the `Toaster` itself does not require props, you can customize the animations and styles directly within the component's file if needed.
+
+### API Integration
+
+`apiToastPlugin` is set up to automatically display toasts in response to API calls, making use of the `ZodiosPlugin` system. It provides feedback for errors and successes, skipping certain URLs or GET requests as configured.
+
+### Example of Plugin Usage
+
+Simply add the `apiToastPlugin` to your Zodios API client configuration:
+
+```javascript
+const apiClient = new Zodios(API_URL, [/* ...endpoints */]);
+apiClient.use(apiToastPlugin);
+```
+
+The `Toaster` provides a smooth, user-friendly notification mechanism that enhances the interactivity of the application, keeping users informed with minimal disruption.
+
+## More Components Comming Soon... 🎉
+
+Stay tuned for more components and features that will be added to the template in the future. We're committed to providing a comprehensive set of tools and solutions to help you build your mobile applications with ease.
+

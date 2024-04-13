@@ -4,6 +4,7 @@
 //   environment: process.env.EXPO_PUBLIC_SENTRY_ENV,
 // });
 
+import Toaster from '@components/ui/toaster';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import useCustomFonts from '@utils/hooks/use-custom-fonts';
 import '@utils/i18n/config';
@@ -29,6 +30,7 @@ const RootLayout = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <Slot />
+      <Toaster />
     </QueryClientProvider>
   );
 };
