@@ -36,7 +36,8 @@ Welcome to `react-native-template` 👋, the go-to template for building mobile 
 To create a new project using this template, run:
 
 ```bash
-npx create-react-native-app my-app -t git+https://github.com/zerodays/react-native-template.git
+git clone https://github.com/zerodays/react-native-template.git my-app
+cd my-app
 ```
 
 ## Project Structure 🏗️
