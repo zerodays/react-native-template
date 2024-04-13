@@ -2,6 +2,37 @@
 
 Welcome to `react-native-template` 👋, the go-to template for building mobile applications with [Expo](https://expo.dev/) and [React Native](https://reactnative.dev/). This template is designed to kickstart your project, utilizing the Expo router, TypeScript, and Nativewind 4.0 (TailwindCSS for React Native) for a smooth and type-safe development experience.
 
+## Table of Contents
+
+1. [Quick Start](#quick-start-)
+2. [Project Structure](#project-structure-)
+3. [Configuration Files](#configuration-files-)
+4. [Features and Benefits](#features-and-benefits-)
+   - [Full Linting and Auto Formatting](#1-full-linting-and-auto-formatting-)
+   - [Easy Aliases with TypeScript](#2-easy-aliases-with-typescript-)
+   - [Nativewind Integration](#3-nativewind-integration-)
+   - [Full Localization Support](#4-full-localization-support-)
+   - [Typed Expo Router Setup](#5-typed-expo-router-setup-)
+   - [Zodius API Client Setup](#6-zodius-api-client-setup-)
+   - [Custom Utility Hooks](#7-custom-utility-hooks-)
+   - [Zustand State Management](#8-zustand-state-management-)
+   - [CI/CD Workflow Configuration](#9-cicd-workflow-configuration-)
+   - [Infisical Environment Variable Support](#10-infisical-environment-variable-support-)
+5. [Customizable Components](#customizable-components-)
+   - [Button](#button-)
+   - [Dialog](#dialog-)
+   - [Loading](#loading-)
+   - [FormTextInput](#formtextinput-)
+   - [ValidationError](#validationerror-)
+   - [Toaster](#toaster-)
+6. [Using the Template Effectively](#using-the-template-effectively-)
+   - [Recommended Folder Structure](#recommended-folder-structure-)
+   - [Development Decision Flow Chart](#development-decision-flow-chart-)
+   - [Benefits of This Approach](#benefits-of-this-approach-)
+7. [Finish Line](#finish-line-)
+
+
+
 ## Quick Start 🚀
 
 To create a new project using this template, run:
@@ -564,4 +595,45 @@ The `Toaster` provides a smooth, user-friendly notification mechanism that enhan
 ## More Components Comming Soon... 🎉
 
 Stay tuned for more components and features that will be added to the template in the future. We're committed to providing a comprehensive set of tools and solutions to help you build your mobile applications with ease.
+
+## Using the Template Effectively 🛠️
+
+To get the most out of the `react-native-template`, it's crucial to understand and utilize the recommended folder structure. This structure is meticulously designed to guide best practices in maintaining a clean, scalable, and maintainable codebase, enabling you to build applications quickly and efficiently.
+
+### Recommended Folder Structure 📁
+
+The folder structure serves as a blueprint for organizing your project's files:
+
+- **`/app`**: Contains all your screens and pages, adhering to the structure required by Expo Router.
+- **`/api`**: Houses Zod schemas, API endpoint definitions, and any inferred types.
+- **`/utils`**: For reusable logic across the application.
+- **`/locales`**: To manage all localization files.
+- **`/assets`**: For all static files like images, fonts, and Lottie animations.
+- **`/components`**: Split into two distinct subfolders:
+  - **`/ui`**: For generic, reusable UI components.
+  - **`/[component-name]`**: For large, complex, or specific components like `/sidebar`, `/complex-navbar`, or `/custom-calendar`.
+
+### Development Decision Flow Chart 🔄
+
+When developing with this template, use the following decision process:
+
+1. **New Screens**: Start by writing code directly in the screen/page file within the `/app` directory.
+2. **Component Extraction**: If a piece of UI repeats multiple times within the same screen, extract it as a new component within the same file.
+3. **Component Generalization**: Once a component is needed across multiple screens, generalize it and place it in the appropriate `/components` subfolder.
+
+![Flowchart Description](/assets/docs/flow-chart.png)
+
+### Benefits of This Approach ✨
+
+- **Readability**: Keeping simple, screen-specific components within the screen file makes the code easier to follow.
+- **Efficiency**: Components are modularized only when necessary, avoiding premature refactoring.
+- **Clarity**: The structure clarifies where each piece of code should reside.
+- **Continuous Refinement**: Regularly transitioning components from local to global as needed helps to reduce technical debt.
+
+By following this development flow, you can maintain a clean and organized codebase that is easy to navigate and scale as your application grows.
+
+## Finish Line 🎉
+
+Now go build something amazing with `react-native-template`! We hope this template provides you with the tools and structure you need to create high-quality mobile applications efficiently. If you have any questions, feedback, or suggestions, feel free to reach out to us. Happy coding! 🚀
+
 
