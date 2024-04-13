@@ -195,3 +195,191 @@ Automate your development processes with pre-defined GitHub Actions workflows lo
 ### 10. Infisical Environment Variable Support 🔐
 
 Incorporate environment variables securely using the Infisical service with a custom script `infisical.sh`, which is run to inject variables into your build process.
+
+## Customizable Components 🎨
+
+This template includes a set of customizable components that you can use to build your application:
+
+## Button ⏩
+
+A highly customizable button component that adopts the variants pattern inspired by `shadcn/ui`, allowing for a consistent yet adaptable design throughout your application.
+
+### Component Explanation
+
+The `Button` component leverages the power of Tailwind CSS with React Native through Nativewind to offer a range of pre-set button styles, termed 'variants'. You can easily extend or customize these styles to fit your design requirements.
+
+Here's a quick rundown on how it works:
+
+- **Variants**: Define the look of your buttons through a `variants` object. Each variant contains styles for the container, text, and optional icon. Variants are applied using the `cn` function from Nativewind which ensures proper sorting of Tailwind classes.
+
+- **Animation**: The component uses `react-native-reanimated` to provide feedback when the button is pressed, with a gentle fade-in and move-up effect.
+
+- **Icons**: You can include left and right icons within the button by passing `LucideIcon` components.
+
+- **Feedback Text**: Optionally, you can display a feedback text upon button press, which uses the same animation as the button text.
+
+- **Loading State**: When the `loading` prop is true, the button displays an `ActivityIndicator`.
+
+### How to Use
+
+Simply import and use the `Button` component in your screens or components, selecting the variant you need and passing any required icons or handlers:
+
+```jsx
+import Button from '@components/Button';
+import { HeartIcon } from 'lucide-react-native';
+
+// ...
+
+<Button
+  variant="filled"
+  onPress={() => console.log('Button pressed')}
+  iconLeft={HeartIcon}
+>
+  Like
+</Button>
+```
+
+### Customizing Variants
+
+To create or customize variants, edit the `variants` object within the button component file. Add your styles using the `cn` function for auto-sorting of Tailwind classes:
+
+```javascript
+const variants = {
+  ...,
+  custom: {
+    container: cn('rounded-lg bg-custom px-4 py-2'),
+    text: cn('font-semibold text-custom-dark'),
+    icon: cn('text-custom-dark'),
+  },
+  ...
+};
+```
+
+To use your custom variant, just set the `variant` prop on the `Button` component:
+
+```jsx
+<Button variant="custom" onPress={...}>
+  Custom Button
+</Button>
+```
+
+By modifying the `Button` component's variants or adding new ones, you can cater to all your button design needs across the application with ease.
+
+## Dialog 🗨️
+
+A pre-styled `Dialog` component, using a context-based approach to manage its visibility. This component provides an easy way to create and control modal dialogs within your application.
+
+### Component Structure
+
+- **`Dialog`**: Acts as the provider which holds the state and logic for showing and hiding the dialog.
+- **`DialogContent`**: The actual modal view that is displayed. It's customizable and can be dismissable.
+- **`DialogTrigger`**: A button that toggles the dialog's visibility.
+- **`DialogClose`**: A discreet close button usually displayed at the top-right corner of the dialog.
+- **`DialogHeader`**: A styled header for your dialog that can hold a title.
+- **`DialogFooter`**: A footer for the dialog which can contain buttons for actions like 'cancel' or 'confirm'.
+- **`DialogDismissFooter`**: A pre-styled footer with a single button that closes the dialog.
+
+### How It Works
+
+1. **Initialization**: The `Dialog` is set up to manage its state using a context provider, allowing its children to toggle the dialog's visibility without prop drilling.
+
+```jsx
+<Dialog>
+  {/* ... */}
+</Dialog>
+```
+
+2. **Displaying Content**: The `DialogContent` wraps the content you want to display inside the modal. It's equipped with a fade-in animation and `KeyboardAvoidingView` to ensure that input fields are always in view.
+
+```jsx
+<DialogContent>
+  {/* Your content here */}
+</DialogContent>
+```
+
+3. **Trigger**: Use `DialogTrigger` anywhere within the `Dialog` context to provide a button that can open the dialog.
+
+```jsx
+<DialogTrigger variant="default">
+  Open Dialog
+</DialogTrigger>
+```
+
+4. **Closing**: `DialogClose` provides a clickable icon that closes the dialog when pressed.
+
+```jsx
+<DialogClose />
+```
+
+### Customizing the Dialog
+
+You can customize the dialog by editing the `Dialog`'s variants or adding new ones directly in the component's file, just like the Button component:
+
+```javascript
+const DialogVariants = {
+  //... define your custom styles
+};
+```
+
+### Usage Example
+
+Here's an example of how to use the `Dialog` in a component:
+
+```jsx
+<Dialog>
+  <DialogTrigger variant="filled">
+    Show Terms of Service
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>Terms of Service</DialogHeader>
+    {/* ... Your terms content */}
+    <DialogFooter>
+      <DialogClose />
+      {/* ... Other action buttons */}
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+This overview should provide you with a good understanding of how to integrate and utilize the `Dialog` component in your application for a variety of modal needs.
+
+
+## Loading 💫
+
+`Loading` component that provides visual feedback to users during loading states. It's flexible, allowing the choice between a native activity indicator and a more visually rich Lottie animation.
+
+### Component Features
+
+- **Customizable Message**: Display an optional message below the loader to inform users what's happening.
+- **Choice of Loader**: Choose between using the native `ActivityIndicator` for a simple loading experience or a Lottie animation for something more engaging.
+
+### How It Works
+
+The `Loading` component checks the `nativeLoader` prop to determine which type of loader to display. It will show a Lottie animation by default. If a `message` is provided, it will be displayed below the loader.
+
+```jsx
+<Loading message="Loading your dashboard..." />
+```
+
+### Customization
+
+- **Lottie Animation**: You can change the Lottie animation by replacing the `LottieLoader` import with another Lottie file.
+- **Message Styling**: Customize the message style by adding Tailwind CSS classes to the `<Text>` component.
+
+### Usage Example
+
+To implement the `Loading` component, import it into your screen or component and add it where you handle your loading logic.
+
+```jsx
+import { Loading } from '@components/Loading';
+
+// ...
+
+return isLoading ? (
+  <Loading message="Fetching data, please wait..." />
+) : (
+  // Your content
+);
+```
+
+With the `Loading` component, you provide a seamless and informative loading experience to your application's users.

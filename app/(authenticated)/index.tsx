@@ -1,3 +1,4 @@
+import { Loading } from '@components/ui/loading';
 import { cn } from '@utils/cn';
 import { useExampleStore } from '@utils/stores/example-store';
 import theme from '@utils/theme';
@@ -25,6 +26,7 @@ const AuthHomeScreen = () => {
       <Button title="Increment" onPress={() => increment()} />
       <Button title="Decrement" onPress={() => decrement()} />
       <Button title="Logout" onPress={() => router.navigate('(guest)')} />
+      <Loading message="Loading..." />
     </View>
   );
 };
