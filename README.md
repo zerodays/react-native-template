@@ -279,12 +279,18 @@ The `react-native-template` includes several packages that extend its capabiliti
 #### Lucide-React-Native
 [Lucide-React-Native](https://github.com/lucide-icons/lucide-react-native) is a fork of the Feather Icons project, specifically tailored for React Native applications. It provides a collection of beautifully crafted, customizable icons which are easy to use in UI development. Using Lucide icons helps maintain consistency and clarity in the app’s design, making the interface more intuitive and visually appealing.
 
+<a name="react-hook-form"></a>
+
 #### React Hook Form
 [React Hook Form](https://react-hook-form.com/) is a flexible and efficient library for managing forms in React applications. It embraces uncontrolled components and native HTML inputs, utilizing hooks to optimize re-renders and improve performance. React Hook Form reduces the amount of boilerplate code needed to build complex forms while increasing performance compared to traditional form state management practices.
+
+<a name="customizable-components"></a>
 
 ## Customizable Components 🎄
 
 This template includes a set of customizable components that you can use to build your application:
+
+<a name="button"></a>
 
 ## Button ⏩
 
@@ -349,6 +355,8 @@ To use your custom variant, just set the `variant` prop on the `Button` componen
 ```
 
 By modifying the `Button` component's variants or adding new ones, you can cater to all your button design needs across the application with ease.
+
+<a name="dialog"></a>
 
 ## Dialog 🗨️
 
@@ -460,6 +468,8 @@ return isLoading ? (
 
 With the `Loading` component, you provide a seamless and informative loading experience to your application's users.
 
+<a name="formtextinput"></a>
+
 ## FormTextInput 📝
 
 The `FormTextInput` component in the template is a versatile input field designed to work seamlessly with `react-hook-form`. It incorporates features like form context integration, custom icons, and support for different input types including text, number, and multiline text.
@@ -521,6 +531,8 @@ import { MailIcon } from 'lucide-react-native';
 ```
 
 By using `FormTextInput`, form inputs are handled elegantly, providing a streamlined user experience for form interactions.
+
+<a name="validationerror"></a>
 
 ## ValidationError 🔍
 
@@ -588,6 +600,8 @@ import { WithValidationError } from '@components/ValidationError';
 
 The `ValidationError` and `WithValidationError` components help maintain a clean UI by only showing error messages when necessary, enhancing the user experience with clear feedback.
 
+<a name="toaster"></a>
+
 ## Toaster 🍞
 
 The `Toaster` component is a dynamic and interactive toast notification system designed to provide immediate feedback to users. It's connected to a store for global state management and comes with an API plugin for automatic display on API events.
@@ -639,9 +653,13 @@ The `Toaster` provides a smooth, user-friendly notification mechanism that enhan
 
 Stay tuned for more components and features that will be added to the template in the future. We're committed to providing a comprehensive set of tools and solutions to help you build your mobile applications with ease.
 
+<a name="using-the-template-effectively"></a>
+
 ## Using the Template Effectively 🛠️
 
 To get the most out of the `react-native-template`, it's crucial to understand and utilize the recommended folder structure. This structure is meticulously designed to guide best practices in maintaining a clean, scalable, and maintainable codebase, enabling you to build applications quickly and efficiently.
+
+<a name="recommended-folder-structure"></a>
 
 ### Recommended Folder Structure 📁
 
@@ -656,6 +674,8 @@ The folder structure serves as a blueprint for organizing your project's files:
   - **`/ui`**: For generic, reusable UI components.
   - **`/[component-name]`**: For large, complex, or specific components like `/sidebar`, `/complex-navbar`, or `/custom-calendar`.
 
+<a name="development-decision-flow-chart"></a
+
 ### Development Decision Flow Chart 🔄
 
 When developing with this template, use the following decision process:
@@ -666,6 +686,8 @@ When developing with this template, use the following decision process:
 
 ![Flowchart Description](/assets/docs/flow-chart.png)
 
+<a name="benefits-of-this-approach"></a>
+
 ### Benefits of This Approach ✨
 
 - **Readability**: Keeping simple, screen-specific components within the screen file makes the code easier to follow.
@@ -674,6 +696,8 @@ When developing with this template, use the following decision process:
 - **Continuous Refinement**: Regularly transitioning components from local to global as needed helps to reduce technical debt.
 
 By following this development flow, you can maintain a clean and organized codebase that is easy to navigate and scale as your application grows.
+
+<a name="finish-line"></a>
 
 ## Finish Line 🏁
 
