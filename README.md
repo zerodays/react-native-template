@@ -38,6 +38,7 @@ To create a new project using this template, run:
 ```bash
 git clone https://github.com/zerodays/react-native-template.git my-app
 cd my-app
+yarn
 ```
 
 ## Project Structure 🏗️
