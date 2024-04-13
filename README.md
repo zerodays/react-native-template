@@ -31,8 +31,6 @@ Welcome to `react-native-template` 👋, the go-to template for building mobile 
    - [Benefits of This Approach](#benefits-of-this-approach-)
 7. [Finish Line](#finish-line-)
 
-
-
 ## Quick Start 🚀
 
 To create a new project using this template, run:
@@ -44,6 +42,7 @@ npx create-react-native-app -t react-native-template
 ## Project Structure 🏗️
 
 This template provides a well-organized directory structure with a set of pre-configured files to streamline your development process. Here's an overview of the essential components:
+
 - `.github`: Contains GitHub Actions workflows for CI/CD.
 - `app`: Contains the screens (utilizing expo-router file naming).
 - `assets`: Stores static files like images, fonts, and videos.
@@ -69,7 +68,6 @@ Each configuration file is set up to ensure that your development experience is 
 - `tailwind.config.js`: Configuration file for Tailwind CSS, where you can define custom styles, themes, and responsive breakpoints.
 - `tsconfig.json`: The TypeScript compiler configuration file that specifies the root files and the compiler options required to compile the project.
 - `yarn.lock`: Auto-generated file that ensures consistent installation of node modules across environments.
-
 
 ## Features and Benefits 🌟
 
@@ -219,7 +217,6 @@ const { value, increment, decrement } = useExampleStore();
 Automate your development processes with pre-defined GitHub Actions workflows located in the `.github` folder:
 
 - `build.yml`: For continuous integration builds.
-- `i18n.yml`: To manage localization files.
 - `lint.yml`: For code linting checks.
 - A pull request template to standardize contributions.
 
@@ -264,10 +261,9 @@ import { HeartIcon } from 'lucide-react-native';
 <Button
   variant="filled"
   onPress={() => console.log('Button pressed')}
-  iconLeft={HeartIcon}
->
+  iconLeft={HeartIcon}>
   Like
-</Button>
+</Button>;
 ```
 
 ### Customizing Variants
@@ -315,25 +311,19 @@ A pre-styled `Dialog` component, using a context-based approach to manage its vi
 1. **Initialization**: The `Dialog` is set up to manage its state using a context provider, allowing its children to toggle the dialog's visibility without prop drilling.
 
 ```jsx
-<Dialog>
-  {/* ... */}
-</Dialog>
+<Dialog>{/* ... */}</Dialog>
 ```
 
 2. **Displaying Content**: The `DialogContent` wraps the content you want to display inside the modal. It's equipped with a fade-in animation and `KeyboardAvoidingView` to ensure that input fields are always in view.
 
 ```jsx
-<DialogContent>
-  {/* Your content here */}
-</DialogContent>
+<DialogContent>{/* Your content here */}</DialogContent>
 ```
 
 3. **Trigger**: Use `DialogTrigger` anywhere within the `Dialog` context to provide a button that can open the dialog.
 
 ```jsx
-<DialogTrigger variant="default">
-  Open Dialog
-</DialogTrigger>
+<DialogTrigger variant="default">Open Dialog</DialogTrigger>
 ```
 
 4. **Closing**: `DialogClose` provides a clickable icon that closes the dialog when pressed.
@@ -358,9 +348,7 @@ Here's an example of how to use the `Dialog` in a component:
 
 ```jsx
 <Dialog>
-  <DialogTrigger variant="filled">
-    Show Terms of Service
-  </DialogTrigger>
+  <DialogTrigger variant="filled">Show Terms of Service</DialogTrigger>
   <DialogContent>
     <DialogHeader>Terms of Service</DialogHeader>
     {/* ... Your terms content */}
@@ -373,7 +361,6 @@ Here's an example of how to use the `Dialog` in a component:
 ```
 
 This overview should provide you with a good understanding of how to integrate and utilize the `Dialog` component in your application for a variety of modal needs.
-
 
 ## Loading 💫
 
@@ -449,7 +436,7 @@ const formMethods = useForm(); // Initialize react-hook-form methods
     icon={UserIcon} // Replace with an actual icon component
     params={{ answerType: 'text' }}
   />
-</FormProvider>
+</FormProvider>;
 ```
 
 ### Customizing the TextInput
@@ -472,11 +459,7 @@ Pass your desired icon component through the `icon` prop:
 ```jsx
 import { MailIcon } from 'lucide-react-native';
 
-<FormTextInput
-  name="email"
-  label="Email Address"
-  icon={MailIcon}
-/>
+<FormTextInput name="email" label="Email Address" icon={MailIcon} />;
 ```
 
 By using `FormTextInput`, form inputs are handled elegantly, providing a streamlined user experience for form interactions.
@@ -515,7 +498,7 @@ const formMethods = useForm(); // Initialize react-hook-form methods
     // other props
   />
   <ValidationError name="username" />
-</FormProvider>
+</FormProvider>;
 ```
 
 ### Customizing the Display
@@ -542,7 +525,7 @@ import { WithValidationError } from '@components/ValidationError';
     secureTextEntry
     // other props
   />
-</WithValidationError>
+</WithValidationError>;
 ```
 
 The `ValidationError` and `WithValidationError` components help maintain a clean UI by only showing error messages when necessary, enhancing the user experience with clear feedback.
@@ -586,7 +569,9 @@ While the `Toaster` itself does not require props, you can customize the animati
 Simply add the `apiToastPlugin` to your Zodios API client configuration:
 
 ```javascript
-const apiClient = new Zodios(API_URL, [/* ...endpoints */]);
+const apiClient = new Zodios(API_URL, [
+  /* ...endpoints */
+]);
 apiClient.use(apiToastPlugin);
 ```
 
@@ -635,5 +620,3 @@ By following this development flow, you can maintain a clean and organized codeb
 ## Finish Line 🎉
 
 Now go build something amazing with `react-native-template`! We hope this template provides you with the tools and structure you need to create high-quality mobile applications efficiently. If you have any questions, feedback, or suggestions, feel free to reach out to us. Happy coding! 🚀
-
-
