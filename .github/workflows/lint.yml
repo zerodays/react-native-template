@@ -32,7 +32,7 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
       - name: Run typecheck
-        run: yarn typecheck
+        run: yarn tsc
 
   run_prettier:
     name: Prettier
@@ -47,4 +47,4 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
       - name: Run Prettier through format
-        run: yarn format
+        run: yarn format-check
