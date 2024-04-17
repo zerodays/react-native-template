@@ -39,6 +39,12 @@ const GuestHomeScreen = () => {
         onPress={() => alert('You just performed a dangerous action!')}>
         Dangerous Button
       </Button>
+      <Button
+        onPress={() => {
+          throw new Error('Hello, again, Sentry!');
+        }}>
+        Throw Error
+      </Button>
     </View>
   );
 };
