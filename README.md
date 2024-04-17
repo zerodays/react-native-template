@@ -18,6 +18,7 @@ Welcome to `react-native-template` 👋, the go-to template for building mobile 
    - [Zustand State Management](#8-zustand-state-management)
    - [CI/CD Workflow Configuration](#9-cicd-workflow-configuration)
    - [Infisical Environment Variable Support](#10-infisical-environment-variable-support)
+   - [Sentry Integration](#11-sentry-integration)
 5. [Included Packages and Their Benefits](#included-packages-and-their-benefits)
    - [Zod](#zod)
    - [Lottie-React-Native](#lottie-react-native)
@@ -260,6 +261,23 @@ Automate your development processes with pre-defined GitHub Actions workflows lo
 Incorporate environment variables securely using the Infisical service with a custom script `infisical.sh`, which is run to inject variables into your build process.
 
 <a name="included-packages-and-their-benefits"></a>
+
+### 11. Sentry Integration 🦉
+
+Integrate Sentry for error monitoring and tracking in your application. The template includes a pre-configured setup for Sentry, allowing you to easily track and resolve issues in your app.
+
+```typescript
+import * as Sentry from 'sentry-expo';
+
+Sentry.init({
+  debug: true,
+  dsn: process.env.EXPO_PUBLIC_SENTRY_DSN,
+  environment: process.env.EXPO_PUBLIC_SENTRY_ENV,
+  ...
+});
+```
+
+These environment variables are injected into the build process using the Infisical service, ensuring that sensitive information is kept secure.
 
 ### Included Packages and Their Benefits 📦
 
