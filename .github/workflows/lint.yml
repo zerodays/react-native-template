@@ -1,6 +1,5 @@
 name: Lint & Check App
 on:
-  push:
   pull_request:
 
 jobs:
