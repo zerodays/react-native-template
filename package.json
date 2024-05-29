@@ -7,9 +7,12 @@
     "android": "infisical run -- expo start --android",
     "ios": "infisical run -- expo start --ios",
     "web": "infisical run -- expo start --web -c",
+    "gen-api": "infisical run --path='/frontend' --command 'openapi-zod-client \"$EXPO_PUBLIC_API_URL/docs/bundle.yml\" -o './api/index.ts' -t ./scripts/zodios-client-template.hbs' && prettier --write ./api/index.ts",
     "lint": "eslint .",
     "format-check": "prettier --check . --ignore-path .gitignore",
-    "format-fix": "prettier --write . --ignore-path .gitignore"
+    "format-fix": "prettier --write . --ignore-path .gitignore",
+    "prepare": "husky",
+    "eas-build-pre-install": "./scripts/infisical.sh"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.23.1",
@@ -54,6 +57,7 @@
     "@types/react-dom": "^18.2.25",
     "eslint": "8",
     "eslint-config-universe": "^12.0.0",
+    "openapi-zod-client": "^1.18.1",
     "prettier": "^3.2.5",
     "prettier-plugin-organize-imports": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.13",

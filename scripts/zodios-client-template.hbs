@@ -1,0 +1,88 @@
+import { makeApi, Zodios } from "@zodios/core";
+import { z } from "zod";
+import apiErrorPlugin from './api-error-plugin';
+import apiTokenPlugin from './api-token-plugin';
+import apiToastPlugin from './api-toast-plugin';
+import { ZodiosHooks } from '@zodios/react';
+
+
+{{#each types}}
+{{{this}}};
+{{/each}}
+
+{{#each schemas}}
+const {{@key}}{{#if (lookup ../emittedType @key)}}: z.ZodType<{{@key}}>{{/if}} = {{{this}}};
+export type {{@key}} = z.infer<typeof {{@key}}>;
+{{/each}}
+
+{{#ifNotEmptyObj schemas}}
+export const schemas = {
+{{#each schemas}}
+	{{@key}},
+{{/each}}
+};
+{{/ifNotEmptyObj}}
+
+const endpoints = makeApi([
+{{#each endpoints}}
+	{
+		method: "{{method}}",
+		path: "{{path}}",
+		{{#if @root.options.withAlias}}
+		{{#if alias}}
+		alias: "{{alias}}",
+		{{/if}}
+		{{/if}}
+		{{#if description}}
+		description: `{{description}}`,
+		{{/if}}
+		{{#if requestFormat}}
+		requestFormat: "{{requestFormat}}",
+		{{/if}}
+		{{#if parameters}}
+		parameters: [
+			{{#each parameters}}
+			{
+				name: "{{name}}",
+				{{#if description}}
+				description: `{{description}}`,
+				{{/if}}
+				{{#if type}}
+				type: "{{type}}",
+				{{/if}}
+				schema: {{{schema}}}
+			},
+			{{/each}}
+		],
+		{{/if}}
+		response: {{{response}}},
+		{{#if errors.length}}
+		errors: [
+			{{#each errors}}
+			{
+				{{#ifeq status "default" }}
+				status: "default",
+				{{else}}
+				status: {{status}},
+				{{/ifeq}}
+				{{#if description}}
+				description: `{{description}}`,
+				{{/if}}
+				schema: {{{schema}}}
+			},
+			{{/each}}
+		]
+		{{/if}}
+	},
+{{/each}}
+]);
+
+const API_URL = process.env.EXPO_PUBLIC_API_URL || '';
+
+const apiClient = new Zodios(API_URL, endpoints);
+apiClient.use(apiErrorPlugin);
+apiClient.use(apiTokenPlugin());
+apiClient.use(apiToastPlugin);
+const api = new ZodiosHooks('endpoints', apiClient);
+
+export { api, apiClient };
