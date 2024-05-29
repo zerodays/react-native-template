@@ -9,8 +9,8 @@
     "web": "infisical run -- expo start --web -c",
     "gen-api": "infisical run --path='/frontend' --command 'openapi-zod-client \"$EXPO_PUBLIC_API_URL/docs/bundle.yml\" -o './api/index.ts' -t ./scripts/zodios-client-template.hbs' && prettier --write ./api/index.ts",
     "lint": "eslint .",
-    "format-check": "prettier --check . --ignore-path .gitignore",
-    "format-fix": "prettier --write . --ignore-path .gitignore",
+    "format-check": "prettier --check .",
+    "format-fix": "prettier --write .",
     "prepare": "husky",
     "eas-build-pre-install": "./scripts/infisical.sh"
   },
