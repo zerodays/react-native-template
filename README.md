@@ -1,6 +1,6 @@
 # React Native Template
 
-Welcome to `react-native-template` 👋, the go-to template for building mobile applications with [Expo](https://expo.dev/) and [React Native](https://reactnative.dev/). This template is designed to kickstart your project, utilizing the Expo router, TypeScript, and Nativewind 4.0 (TailwindCSS for React Native) for a smooth and type-safe development experience.
+Welcome to `react-native-template` 👋, the go-to template for building mobile applications with [Expo](https://expo.dev/) and [React Native](https://reactnative.dev/). This template is designed to kickstart your project, utilizing the Expo router, TypeScript, and Nativewind 4.0 (TailwindCSS for React Native) for a smooth and type-safe development experience. 
 
 ## Table of Contents
 
@@ -53,7 +53,7 @@ yarn
 
 ## Project Structure 🏗️
 
-This template provides a well-organized directory structure with a set of pre-configured files to streamline your development process. Here's an overview of the essential components:
+This template provides a well-organized directory structure with a set of preconfigured files to streamline your development process. Here's an overview of the essential components:
 
 - `.github`: Contains GitHub Actions workflows for CI/CD.
 - `app`: Contains the screens (utilizing expo-router file naming).
