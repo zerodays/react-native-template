@@ -38,7 +38,7 @@
     "intl-pluralrules": "^2.0.1",
     "lottie-react-native": "7.2.2",
     "lucide-react-native": "^0.368.0",
-    "nativewind": "^4.0.1",
+    "nativewind": "^4.1.23",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-hook-form": "^7.51.3",

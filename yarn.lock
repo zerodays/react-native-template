@@ -7724,7 +7724,7 @@ nanoid@^3.3.11, nanoid@^3.3.7:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.11.tgz#4f4f112cefbe303202f2199838128936266d185b"
   integrity sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==
 
-nativewind@^4.0.1:
+nativewind@^4.1.23:
   version "4.1.23"
   resolved "https://registry.yarnpkg.com/nativewind/-/nativewind-4.1.23.tgz#badfa94a5cd2e12ff8971dd274d234cd843ca74e"
   integrity sha512-oLX3suGI6ojQqWxdQezOSM5GmJ4KvMnMtmaSMN9Ggb5j7ysFt4nHxb1xs8RDjZR7BWc+bsetNJU8IQdQMHqRpg==
