@@ -2,7 +2,6 @@
   "name": "react-native-template",
   "version": "1.0.0",
   "main": "index.js",
-  "packageManager": "yarn@1.22.22",
   "scripts": {
     "start": "infisical run -- expo start -c",
     "android": "infisical run -- expo start --android",
