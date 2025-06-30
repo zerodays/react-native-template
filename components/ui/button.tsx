@@ -125,7 +125,7 @@ const Button = ({
         <View className="absolute bottom-0 left-0 right-0 top-0 z-10 flex items-center justify-center">
           <ActivityIndicator
             size="small"
-            color={variant === 'danger' ? theme.default.red[500] : theme.primary[500]}
+            color={variant === 'danger' ? theme.red[500] : theme.primary[500]}
           />
         </View>
       )}

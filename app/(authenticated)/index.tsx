@@ -27,10 +27,10 @@ const AuthHomeScreen = () => {
       </Text>
       <Text>{value}</Text>
       <Button asChild onPress={() => increment()}>
-        <PlusIcon color={theme.default.black} />
+        <PlusIcon color={theme.black} />
       </Button>
       <Button asChild onPress={() => decrement()}>
-        <MinusIcon color={theme.default.black} />
+        <MinusIcon color={theme.black} />
       </Button>
       <Button onPress={() => router.navigate(Routes.guest.index)}>
         Logout
