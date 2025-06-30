@@ -1,7 +1,6 @@
 This folder should contain credential files (e.g. provided by Google):
 
 1. Firebase files (if this app uses Firebase Cloud Messaging and Firebase Crashlytics atm):
-
    - `google-services.json` for android
    - `GoogleService-Info.plist` for iOS
 
