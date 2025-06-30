@@ -1,4 +1,5 @@
 import Button from '@components/ui/button';
+import Routes from '@utils/routes';
 import theme from '@utils/theme';
 import { router } from 'expo-router';
 import { useTranslation } from 'react-i18next';
@@ -22,7 +23,7 @@ const GuestHomeScreen = () => {
       <Text>{t('helloWorld')}</Text>
       <Button
         variant="default"
-        onPress={() => router.navigate('(authenticated)')}>
+        onPress={() => router.navigate(Routes.auth.index)}>
         Login
       </Button>
 

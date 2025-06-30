@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import { Href } from 'expo-router';
+import type { Href } from 'expo-router';
 
 // This is a helper function to create a route object with type safety
 type RouteConstructor = <T>(href: Href<T>) => Href<T>;
