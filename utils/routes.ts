@@ -1,9 +1,9 @@
 const Routes = {
   guest: {
-    index: '/(guest)/',
+    index: '/(guest)',
   },
   auth: {
-    index: '/(authenticated)/',
+    index: '/(authenticated)',
   },
 } as const;
 
