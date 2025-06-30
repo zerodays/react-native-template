@@ -74,5 +74,6 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^7.9.0"
   },
-  "private": true
+  "private": true,
+  "packageManager": "yarn@4.9.2"
 }
