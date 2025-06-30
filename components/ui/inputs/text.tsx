@@ -1,5 +1,5 @@
 import type { FieldValues, Path } from 'react-hook-form';
-import type { TextInputProps } from 'react-native';
+import type { StyleProp, TextInputProps, ViewStyle } from 'react-native';
 
 import clsx from 'clsx';
 import type { LucideIcon } from 'lucide-react-native';
@@ -12,12 +12,13 @@ type TextInputParams = {
 };
 
 interface FormTextInputProps<TFieldValues extends FieldValues>
-  extends Omit<TextInputProps, 'onBlur' | 'onChangeText' | 'value'> {
+  extends Omit<TextInputProps, 'style'> {
   name: Path<TFieldValues>;
   label?: string;
   icon?: LucideIcon;
   params?: TextInputParams;
   displayMode?: boolean;
+  style?: StyleProp<ViewStyle>;
 }
 
 /**
