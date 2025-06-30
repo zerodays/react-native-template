@@ -53,7 +53,7 @@ yarn
 
 ## Project Structure 🏗️
 
-This template provides a well-organized directory structure with a set of pre-configured files to streamline your development process. Here's an overview of the essential components:
+This template provides a well-organized directory structure with a set of preconfigured files to streamline your development process. Here's an overview of the essential components:
 
 - `.github`: Contains GitHub Actions workflows for CI/CD.
 - `app`: Contains the screens (utilizing expo-router file naming).
@@ -166,7 +166,7 @@ Pre-configured routing structure for authenticated and guest users. Routes are t
 ```typescript
 import { Href } from 'expo-router';
 
-type RouteConstructor = <T>(href: Href<T>) => Href<T>;
+type RouteConstructor = (href: Href) => Href;
 const Route: RouteConstructor = (href) => href;
 
 const Routes = {
@@ -281,7 +281,7 @@ These environment variables are injected into the build process using the Infisi
 
 ### Included Packages and Their Benefits 📦
 
-The `react-native-template` includes several packages that extend its capabilities and enrich the development experience. Here’s a brief overview of these packages and what they offer:
+The `react-native-template` includes several packages that extend its capabilities and enrich the development experience. Here's a brief overview of these packages and what they offer:
 
 <a name="zod"></a>
 
@@ -299,7 +299,7 @@ The `react-native-template` includes several packages that extend its capabiliti
 
 #### Lucide-React-Native
 
-[Lucide-React-Native](https://github.com/lucide-icons/lucide-react-native) is a fork of the Feather Icons project, specifically tailored for React Native applications. It provides a collection of beautifully crafted, customizable icons which are easy to use in UI development. Using Lucide icons helps maintain consistency and clarity in the app’s design, making the interface more intuitive and visually appealing.
+[Lucide-React-Native](https://github.com/lucide-icons/lucide-react-native) is a fork of the Feather Icons project, specifically tailored for React Native applications. It provides a collection of beautifully crafted, customizable icons which are easy to use in UI development. Using Lucide icons helps maintain consistency and clarity in the app's design, making the interface more intuitive and visually appealing.
 
 <a name="react-hook-form"></a>
 

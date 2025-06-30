@@ -1,17 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import { Href } from 'expo-router';
-
-// This is a helper function to create a route object with type safety
-type RouteConstructor = <T>(href: Href<T>) => Href<T>;
-const Route: RouteConstructor = (href) => href;
-
 const Routes = {
   guest: {
-    index: Route('/(guest)/'),
+    index: '/(guest)',
   },
   auth: {
-    index: Route('/(authenticated)/'),
+    index: '/(authenticated)',
   },
 } as const;
 
