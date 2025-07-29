@@ -1,7 +1,8 @@
 {
   "cli": {
     "version": ">= 3.13.3",
-    "promptToConfigurePushNotifications": false
+    "promptToConfigurePushNotifications": false,
+    "appVersionSource": "remote"
   },
   "build": {
     "development": {
@@ -9,9 +10,11 @@
       "distribution": "internal"
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "store",
+      "autoIncrement": true
     },
     "production": {
+      "autoIncrement": true,
       "android": {
         "image": "latest"
       },
