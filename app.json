@@ -38,8 +38,8 @@
         "@sentry/react-native/expo",
         {
           "url": "https://sentry.io/",
-          "organization": "sentry org slug, or use the `SENTRY_ORG` environment variable",
-          "project": "sentry project name, or use the `SENTRY_PROJECT` environment variable"
+          "organization": "CHANGE THIS: sentry org slug, or use the `SENTRY_ORG` environment variable",
+          "project": "CHANGE THIS: sentry project name, or use the `SENTRY_PROJECT` environment variable"
         }
       ]
     ]

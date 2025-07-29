@@ -35,9 +35,12 @@ if [ "$EAS_BUILD_PROFILE" = "production" ]; then
 fi
 echo "Using environment: $ENVIRONMENT"
 
+SECRET_PATH="/native"
+WORKSPACE_ID="650c0ca916f6d380e9193251"
+
 # Fetch secrets and create .env file
 echo "Fetching secrets and creating .env file..."
-curl "https://app.infisical.com/api/v3/secrets/raw?environment=$ENVIRONMENT&secretPath=/native&workspaceId=650c0ca916f6d380e9193251" \
+curl "https://app.infisical.com/api/v3/secrets/raw?environment=$ENVIRONMENT&secretPath=$SECRET_PATH&workspaceId=$WORKSPACE_ID" \
     --header "Authorization: Bearer $INFISICAL_TOKEN" | \
     use_jq -r '.secrets[] | "\(.secretKey)=\(.secretValue)"' > .env
 

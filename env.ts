@@ -11,10 +11,11 @@ const env = createEnv({
   },
 
   /**
-   * What object holds the environment variables at runtime. This is usually
-   * `process.env` or `import.meta.env`.
+   * What object holds the environment variables at runtime. Map these manually like below.
    */
-  runtimeEnv: process.env,
+  runtimeEnv: {
+    EXPO_PUBLIC_API_URL: process.env.EXPO_PUBLIC_API_URL,
+  },
 });
 
 export default env;
