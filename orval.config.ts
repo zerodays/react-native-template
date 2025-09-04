@@ -22,4 +22,15 @@ export default defineConfig({
       target: './placeholder.yaml',
     },
   },
+  apiZod: {
+    output: {
+      mode: 'split',
+      client: 'zod',
+      target: 'api/generated/types.ts',
+    },
+    input: {
+      // This will get overridden by /scripts/generate-api.ts
+      target: './placeholder.yaml',
+    },
+  },
 });
