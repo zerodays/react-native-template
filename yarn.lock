@@ -3912,24 +3912,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zodios/core@npm:^10.3.1, @zodios/core@npm:^10.9.6":
+"@zodios/core@npm:^10.3.1":
   version: 10.9.6
   resolution: "@zodios/core@npm:10.9.6"
   peerDependencies:
     axios: ^0.x || ^1.0.0
     zod: ^3.x
   checksum: 10c0/0a792779fa438ccc214cca09beafb29553737b8208b3819dfe3df7ab50fa01345ec60870bdb8e47e758e2b63d1984052ac502e7a5d50af5f5ef620717dfee780
-  languageName: node
-  linkType: hard
-
-"@zodios/react@npm:^10.4.5":
-  version: 10.4.5
-  resolution: "@zodios/react@npm:10.4.5"
-  peerDependencies:
-    "@tanstack/react-query": 4.x
-    "@zodios/core": ">=10.2.0 <11.0.0"
-    react: ">=16.8.0"
-  checksum: 10c0/782f7ad907c6737aa28c0aac53743239eb3a09f0e3921217195a612e80b7d53809e88eca464665748128613861e06a92c5130c1971901e56057f9aa05f6e56e4
   languageName: node
   linkType: hard
 
@@ -6769,6 +6758,15 @@ __metadata:
   bin:
     exp: ./bin/exp.js
   checksum: 10c0/7d41efd16e1a505db6e1b65e719325f9ac51558e15bf74174b5076b018a90fe1b8002ad62e962a78bdac1f321ba703a4b4317ca37c662c72b466a6ff0ad562a0
+  languageName: node
+  linkType: hard
+
+"expo-application@npm:~6.1.5":
+  version: 6.1.5
+  resolution: "expo-application@npm:6.1.5"
+  peerDependencies:
+    expo: "*"
+  checksum: 10c0/c4fa0bddfc911af17055334558314d819d403efa5db22b05cffc44c91eef38e9fb57b4a5aae35378523c59847189a7ca09ad9e5370ee5a3b0f23c1c5146c8683
   languageName: node
   linkType: hard
 
@@ -12571,8 +12569,6 @@ __metadata:
     "@types/aes-js": "npm:^3.1.4"
     "@types/react": "npm:~19.0.10"
     "@types/react-dom": "npm:~18.2.25"
-    "@zodios/core": "npm:^10.9.6"
-    "@zodios/react": "npm:^10.4.5"
     axios: "npm:^1.6.8"
     clsx: "npm:^2.1.0"
     eslint: "npm:8"
@@ -12580,6 +12576,7 @@ __metadata:
     eslint-plugin-sonarjs: "npm:^1.0.3"
     exp: "npm:^57.2.1"
     expo: "npm:^53.0.13"
+    expo-application: "npm:~6.1.5"
     expo-constants: "npm:~17.1.6"
     expo-font: "npm:~13.3.1"
     expo-linear-gradient: "npm:~14.1.5"
