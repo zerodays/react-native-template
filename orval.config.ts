@@ -26,6 +26,7 @@ export default defineConfig({
     output: {
       mode: 'split',
       client: 'zod',
+      prettier: true,
       target: 'api/generated/types.ts',
     },
     input: {
