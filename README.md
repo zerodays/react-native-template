@@ -13,7 +13,7 @@ Welcome to `react-native-template` 👋, the go-to template for building mobile 
    - [Nativewind Integration](#3-nativewind-integration)
    - [Full Localization Support](#4-full-localization-support)
    - [Typed Expo Router Setup](#5-typed-expo-router-setup)
-   - [Zodius API Client Setup](#6-zodius-api-client-setup)
+   - [Orval API Client Setup](#6-orval-api-client-setup)
    - [Custom Utility Hooks](#7-custom-utility-hooks)
    - [Zustand State Management](#8-zustand-state-management)
    - [CI/CD Workflow Configuration](#9-cicd-workflow-configuration)
@@ -30,7 +30,6 @@ Welcome to `react-native-template` 👋, the go-to template for building mobile 
    - [Loading](#loading)
    - [FormTextInput](#formtextinput)
    - [ValidationError](#validationerror)
-   - [Toaster](#toaster)
 7. [Using the Template Effectively](#using-the-template-effectively)
    - [Recommended Folder Structure](#recommended-folder-structure)
    - [Development Decision Flow Chart](#development-decision-flow-chart)
@@ -186,30 +185,39 @@ export default Routes;
 // router.push(Routes.artists.artist('1').songs.song('2'));
 ```
 
-<a name="6-zodius-api-client-setup"></a>
+<a name="6-orval-api-client-setup"></a>
 
-### 6. Zodius API Client Setup 📡
+### 6. Orval API Client Setup 📡
 
-A pre-configured Zodius API client with Tenstack Query for managing API calls. The `./api` folder includes a fully set up example for GET and POST requests, complete with schemas, definitions, and global error handling through a custom Zodius plugin.
+A pre-configured Orval setup generates a typed API client and TanStack Query hooks from your OpenAPI spec. The `api/generated` folder contains endpoints, models, and optional MSW mocks, powered by a custom Axios mutator and React Query.
+
+```bash
+# Generate the client from your OpenAPI schema
+yarn gen-api
+```
 
 ```typescript
-import { Zodios } from '@zodios/core';
-import { ZodiosHooks } from '@zodios/react';
-import apiErrorPlugin from './api-error-plugin';
-import exampleApi from './example';
+// Use generated React Query hooks
+import { useGetRandomFact, useGetFacts } from 'api/generated/endpoints';
 
-const API_URL = process.env.EXPO_PUBLIC_API_URL || '';
+const { data, isLoading, error } = useGetRandomFact({ max_length: 140 });
+```
 
-// Zodios API client
-const apiClient = new Zodios(API_URL, [...exampleApi]);
+```typescript
+// Imperative request (without a hook)
+import { getRandomFact } from 'api/generated/endpoints';
 
-// Apply global error handling
-apiClient.use(apiErrorPlugin);
+const { data } = await getRandomFact({ max_length: 140 });
+```
 
-// Zodios hooks for react
-const api = new ZodiosHooks('exampleApi', apiClient);
+```typescript
+// Global headers and base URL are configured via Axios
+// Base URL: env.EXPO_PUBLIC_API_URL (see api/axios-instance.ts)
+// Headers: injected by ApiProvider (see utils/providers/api-provider.ts)
+import { ApiProvider } from '@utils/providers/api-provider';
 
-export { api, apiClient };
+// Wrap your app (e.g., in your root layout)
+<ApiProvider>{children}</ApiProvider>;
 ```
 
 <a name="7-custom-utility-hooks"></a>
@@ -622,55 +630,6 @@ import { WithValidationError } from '@components/ValidationError';
 ```
 
 The `ValidationError` and `WithValidationError` components help maintain a clean UI by only showing error messages when necessary, enhancing the user experience with clear feedback.
-
-<a name="toaster"></a>
-
-## Toaster 🍞
-
-The `Toaster` component is a dynamic and interactive toast notification system designed to provide immediate feedback to users. It's connected to a store for global state management and comes with an API plugin for automatic display on API events.
-
-### Component Features
-
-- **Gesture Support**: Users can dismiss the toast by dragging it down, thanks to the integrated gesture handler.
-- **Animated Visibility**: Uses `react-native-reanimated` for smooth show and hide animations.
-- **Safe Area Handling**: Accounts for device safe areas, ensuring the toast is always visible and accessible.
-- **Custom Icons**: Displays icons for error, success, or information based on the toast type.
-
-### How It Works
-
-The `Toaster` component listens to the toast state from `useToastStore`. When a toast is set, it animates into view. It can be dismissed with a drag gesture or by pressing the 'Dismiss' button.
-
-### Usage
-
-The `Toaster` component does not need to be manually managed; it works by setting the toast state through the `useToastStore` actions:
-
-```javascript
-useToastStore.getState().setToast({
-  type: 'success',
-  message: 'Your changes have been saved!',
-});
-```
-
-### Customizing the Toaster
-
-While the `Toaster` itself does not require props, you can customize the animations and styles directly within the component's file if needed.
-
-### API Integration
-
-`apiToastPlugin` is set up to automatically display toasts in response to API calls, making use of the `ZodiosPlugin` system. It provides feedback for errors and successes, skipping certain URLs or GET requests as configured.
-
-### Example of Plugin Usage
-
-Simply add the `apiToastPlugin` to your Zodios API client configuration:
-
-```javascript
-const apiClient = new Zodios(API_URL, [
-  /* ...endpoints */
-]);
-apiClient.use(apiToastPlugin);
-```
-
-The `Toaster` provides a smooth, user-friendly notification mechanism that enhances the interactivity of the application, keeping users informed with minimal disruption.
 
 ## More Components Comming Soon... 🎉
 
