@@ -3,6 +3,7 @@ import * as Sentry from '@sentry/react-native';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import useCustomFonts from '@utils/hooks/use-custom-fonts';
 import '@utils/i18n/config';
+import { ApiProvider } from '@utils/providers/api-provider';
 import { isRunningInExpoGo } from 'expo';
 import { Slot, SplashScreen, useNavigationContainerRef } from 'expo-router';
 import { useEffect } from 'react';
@@ -47,8 +48,10 @@ const RootLayout = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Slot />
-      <Toaster />
+      <ApiProvider>
+        <Slot />
+        <Toaster />
+      </ApiProvider>
     </QueryClientProvider>
   );
 };
