@@ -1,0 +1,39 @@
+name: Check Version Increment
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get the current version
+        id: current_version
+        run: |
+          current_version=$(jq '.expo.version' app.json)
+          echo "current_version=$current_version" >> $GITHUB_OUTPUT
+
+      - name: Get the previous version
+        id: previous_version
+        run: |
+          git fetch origin master --depth=2
+          git checkout origin/master
+          previous_version=$(jq '.expo.version' app.json)
+          echo "previous_version=$previous_version" >> $GITHUB_OUTPUT
+
+      - name: Compare versions
+        run: |
+          current_version=${{ steps.current_version.outputs.current_version }}
+          previous_version=${{ steps.previous_version.outputs.previous_version }}
+          if [ "$current_version" = "$previous_version" ]; then
+            echo "Version has not been incremented"
+            exit 1
+          else
+            echo "Version has been incremented"
+            exit 0
+          fi
