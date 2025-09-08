@@ -8,7 +8,7 @@ export default defineConfig({
       schemas: 'api/generated/model',
       client: 'react-query',
       clean: true,
-      mock: true,
+      mock: false,
       prettier: true,
       override: {
         mutator: {
